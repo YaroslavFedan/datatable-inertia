@@ -1,0 +1,19 @@
+<?php
+
+namespace $NAMESPASE$;
+
+use Illuminate\Database\Eloquent\Builder;
+use Dongrim\DatatableInertia\DatatableInertia;
+
+class $CLASS$ extends DatatableInertia
+{
+    /**
+     * Eloquent datatable query builder
+     *
+     * @return Builder
+     */
+    public function query()
+    {
+        // code
+    }
+}
