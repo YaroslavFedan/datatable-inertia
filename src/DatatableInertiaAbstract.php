@@ -15,9 +15,9 @@ abstract class DatatableInertiaAbstract
     /**
      * Eloquent datatable query builder
      *
-     * @return Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
-    abstract public function query(): Builder;
+    abstract public function query();
 
 
     public function __construct()

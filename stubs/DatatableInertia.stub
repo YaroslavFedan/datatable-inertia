@@ -10,7 +10,7 @@ class $CLASS$ extends DatatableInertia
     /**
      * Eloquent datatable query builder
      *
-     * @return Builder
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query()
     {

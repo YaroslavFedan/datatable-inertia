@@ -2,8 +2,6 @@
 
 namespace Dongrim\DatatableInertia;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 
 class DatatableInertia extends DatatableInertiaAbstract
 {
@@ -36,14 +34,12 @@ class DatatableInertia extends DatatableInertiaAbstract
      */
     public $serverSide;
 
-
-
     /**
      * Eloquent query builder
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(): Builder
+    public function query()
     {
         return $this->datatable->query();
     }
@@ -53,7 +49,7 @@ class DatatableInertia extends DatatableInertiaAbstract
      *
      * @return array
      */
-    public function columns(): array
+    public function columns()
     {
         return [];
     }
@@ -63,7 +59,7 @@ class DatatableInertia extends DatatableInertiaAbstract
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function modify($data): Model
+    public function modify($data)
     {
         if (method_exists('modify', get_class($this->datatable))) {
             return $this->datatable->modify($data);
@@ -77,7 +73,7 @@ class DatatableInertia extends DatatableInertiaAbstract
      *
      * @return array
      */
-    public function guard($data): array
+    public function guard($data)
     {
         if (method_exists('guard', get_class($this->datatable))) {
             return $this->datatable->guard($data);
@@ -91,7 +87,7 @@ class DatatableInertia extends DatatableInertiaAbstract
      *
      * @return array
      */
-    public function filters(): array
+    public function filters()
     {
         if (method_exists('filters', get_class($this->datatable))) {
             return $this->datatable->filters();
