@@ -3,12 +3,6 @@
 namespace Dongrim\DatatableInertia\Factories\Classes;
 
 use Dongrim\DatatableInertia\DatatableInertia;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableGuard;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableTotal;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableModify;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableColumns;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableFilters;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableProperty;
 
 class DatatableArrayResponse
 {
@@ -17,7 +11,7 @@ class DatatableArrayResponse
         $method = $isServerSide ? 'through' : 'map';
         $columns = DatatableColumns::get($datatableInertia);
 
-        $result = $fetchData->$method(function ($item) use ($datatableInertia, $columns){
+        $result = $fetchData->$method(function ($item) use ($datatableInertia, $columns) {
             $data = [];
 
             $item = DatatableModify::get($datatableInertia, $item);
@@ -36,7 +30,7 @@ class DatatableArrayResponse
         })->toArray();
 
         $data = $isServerSide ? $result : ['data' => $result];
-       
+
         foreach (self::setParams($datatableInertia, $data, $itemsPerPage) as $key => $value) {
             if (!isset($data[$key])) {
                 $data[$key] = $value;
@@ -63,7 +57,7 @@ class DatatableArrayResponse
             'next_page_url' => null,
             'prev_page_url' => null,
             'path' => null,
-            'server_side' => DatatableProperty::get($datatableInertia,'serverSide'),
+            'server_side' => DatatableProperty::get($datatableInertia, 'serverSide'),
         ];
     }
 }

@@ -3,7 +3,6 @@
 namespace Dongrim\DatatableInertia\Factories\Classes;
 
 use Dongrim\DatatableInertia\DatatableInertia;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableMethod;
 
 class DatatableFilters
 {

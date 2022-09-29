@@ -9,7 +9,7 @@ class DatatableInertia extends DatatableInertiaAbstract
 {
     /**
      * The name of the object containing all returned data from datatable
-     * 
+     *
      * @var string
      */
     public $datatableName;
@@ -17,21 +17,21 @@ class DatatableInertia extends DatatableInertiaAbstract
     /**
      * The key in the request responsible for changing the number
      * of displayed elements on the page (only when rendering on the client side)
-     * 
+     *
      * @var string
      */
     public $perPageKey;
 
     /**
      * Parameter responsible for the number of displayed elements on the page by default
-     * 
+     *
      * @var int
      */
     public $itemsPerPage;
 
     /**
      * Parameter responsible for the server or client side rendering
-     * 
+     *
      * @var boolean
      */
     public $serverSide;

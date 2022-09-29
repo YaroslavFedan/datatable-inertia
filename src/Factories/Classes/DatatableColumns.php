@@ -4,7 +4,6 @@ namespace Dongrim\DatatableInertia\Factories\Classes;
 
 use Illuminate\Support\Facades\Schema;
 use Dongrim\DatatableInertia\DatatableInertia;
-use Dongrim\DatatableInertia\Factories\Classes\DatatableMethod;
 
 class DatatableColumns
 {

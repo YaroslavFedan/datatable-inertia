@@ -5,9 +5,8 @@ namespace Dongrim\DatatableInertia\Tests\Datatables;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
-class PostDatatableServerSide  extends PostDatatableExample
+class PostDatatableServerSide extends PostDatatableExample
 {
-
     public $datatableName = "testDatatable";
     public $serverSide = true;
     public $itemsPerPage = 10;
@@ -19,7 +18,7 @@ class PostDatatableServerSide  extends PostDatatableExample
             'delete' => $data->id
         ];
     }
-    
+
     public function columns(): array
     {
         return ['id', 'title', 'body'];
@@ -29,7 +28,7 @@ class PostDatatableServerSide  extends PostDatatableExample
     {
         return ['search', 'order', 'sort'];
     }
-    
+
     public function modify($data): Model
     {
         $data->slug .= '-' . $data->id;

@@ -11,8 +11,9 @@ class DatatableItemsPerPage
         $itemsPerPage = DatatableProperty::get($datatableInertia, 'itemsPerPage');
         $perPageKey = DatatableProperty::get($datatableInertia, 'perPageKey');
 
-        if( $serverSide && request()->has($perPageKey) )
+        if ($serverSide && request()->has($perPageKey)) {
             return request()->$perPageKey;
+        }
 
         return $itemsPerPage;
     }

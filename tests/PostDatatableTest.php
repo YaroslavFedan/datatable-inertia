@@ -10,7 +10,6 @@ use Dongrim\DatatableInertia\DatatableInertia;
 use Dongrim\DatatableInertia\Tests\Models\Post;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableExample;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithGuard;
-use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableServerSide;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithModify;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithColumns;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithFilters;
@@ -54,7 +53,6 @@ class PostDatatableTest extends TestCase
     /** @test */
     public function this_is_an_inertial_response_when_passing_an_name_of_a_class()
     {
-
         $response = Inertia::render('Post/Index')->table(PostDatatableExample::class);
 
         $this->assertEquals(get_class($response), InertiaResponse::class);

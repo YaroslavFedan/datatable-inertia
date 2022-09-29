@@ -13,9 +13,9 @@ class DatatableProperty
         $childReflectionClass = new ReflectionObject($childClass);
         $properties = $childReflectionClass->getDefaultProperties();
 
-        if(!isset($properties[$propertyName]) || !$properties[$propertyName]){
+        if (!isset($properties[$propertyName]) || !$properties[$propertyName]) {
             return $childClass->$propertyName;
-        }else{
+        } else {
             return $properties[$propertyName];
         }
     }

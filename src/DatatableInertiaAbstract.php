@@ -27,7 +27,7 @@ abstract class DatatableInertiaAbstract
         $this->itemsPerPage = config('datatables.itemsPerPage', 15);
         $this->serverSide = config('datatables.serverSide', false);
     }
-    
+
     /**
      * Check valid object or string type
      *

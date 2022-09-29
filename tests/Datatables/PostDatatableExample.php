@@ -8,7 +8,6 @@ use Dongrim\DatatableInertia\Tests\Models\Post;
 
 class PostDatatableExample extends DatatableInertia
 {
-    
     public function query(): Builder
     {
         return Post::query();
