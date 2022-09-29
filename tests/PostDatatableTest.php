@@ -10,6 +10,7 @@ use Dongrim\DatatableInertia\DatatableInertia;
 use Dongrim\DatatableInertia\Tests\Models\Post;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableExample;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithGuard;
+use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableServerSide;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithModify;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithColumns;
 use Dongrim\DatatableInertia\Tests\Datatables\PostDatatableWithFilters;
@@ -71,12 +72,23 @@ class PostDatatableTest extends TestCase
         $this->assertArrayHasKey('PostDatatableExample', $data['props']);
     }
 
+    // /** @test */
+    // public function can_change_per_page_key()
+    // {
+    //     $datatable = new PostDatatableExample();
+    //     $datatable->perPageKey = 'custom_per_page';
+    //     $datatable->itemsPerPage = 15;
+    //     $response = $this->makeInertiaResponse($datatable);
+    //     $data = $this->inertiaResponseJsonToArray($response);
+    //     dd($data);
+    // }
+
     /** @test */
     public function when_rendering_data_on_the_client_side_is_not_possible_to_change_the_number_of_elements_per_page()
     {
         $perPage = 10;
         $datatable = new PostDatatableExample();
-        $datatable->itemPerPage = $perPage;
+        $datatable->itemsPerPage = $perPage;
         $response = $this->makeInertiaResponse($datatable, ['per_page' => 5]);
         $data = $this->inertiaResponseJsonToArray($response);
 
@@ -106,7 +118,7 @@ class PostDatatableTest extends TestCase
 
         // when client side
         $datatable = new PostDatatableExample();
-        $datatable->itemPerPage = $recordCount;
+        $datatable->itemsPerPage = $recordCount;
         $response = $this->makeInertiaResponse($datatable);
         $data = $this->inertiaResponseJsonToArray($response);
 
@@ -115,7 +127,7 @@ class PostDatatableTest extends TestCase
         // when server side
         $datatable = new PostDatatableExample();
         $datatable->serverSide = true;
-        $datatable->itemPerPage = $recordCount;
+        $datatable->itemsPerPage = $recordCount;
         $response = $this->makeInertiaResponse($datatable);
         $data = $this->inertiaResponseJsonToArray($response);
 
@@ -131,7 +143,7 @@ class PostDatatableTest extends TestCase
 
         // when client side
         $datatable = new PostDatatableExample();
-        $datatable->itemPerPage = $recordCount;
+        $datatable->itemsPerPage = $recordCount;
         $response = $this->makeInertiaResponse($datatable);
         $data = $this->inertiaResponseJsonToArray($response);
 
@@ -140,7 +152,7 @@ class PostDatatableTest extends TestCase
         // when server side
         $datatable = new PostDatatableExample();
         $datatable->serverSide = true;
-        $datatable->itemPerPage = $recordCount;
+        $datatable->itemsPerPage = $recordCount;
         $response = $this->makeInertiaResponse($datatable);
         $data = $this->inertiaResponseJsonToArray($response);
 

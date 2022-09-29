@@ -19,6 +19,15 @@ abstract class DatatableInertiaAbstract
      */
     abstract public function query(): Builder;
 
+
+    public function __construct()
+    {
+        $this->datatableName = config('datatables.datatableName', 'datatable');
+        $this->perPageKey = config('datatables.perPageKey', 'per_page');
+        $this->itemsPerPage = config('datatables.itemsPerPage', 15);
+        $this->serverSide = config('datatables.serverSide', false);
+    }
+    
     /**
      * Check valid object or string type
      *
@@ -54,9 +63,6 @@ abstract class DatatableInertiaAbstract
      */
     public function applyTo(InertiaResponse $response): InertiaResponse
     {
-        return $response->with(
-            $this->datatable->datatableName,
-            DatatableInertiaFactory::build($this)
-        );
+        return DatatableInertiaFactory::build($response, $this);
     }
 }

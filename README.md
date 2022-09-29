@@ -107,8 +107,10 @@ class PostDatatable extends DatatableInertia
 | :-------------- | :----: | :---------: | :------- |
 | `datatableName` | string | 'datatable' | The name of the object containing all returned data from datatable |
 | `perPageKey`    | string | 'per_page'  | The key in the request responsible for changing the number of displayed elements on the page (only when rendering on the client side) |
-| `itemPerPage`   |  int   |    15       | Parameter responsible for the number of displayed elements on the page by default |
+| `itemsPerPage`   |  int   |    15       | Parameter responsible for the number of displayed elements on the page by default |
 | `serverSide` | bool | false| Parameter responsible for the server or client side rendering |
+
+> Note that these options are set globally in the config/datatables.php configuration file.<br> You can override them directly in you the class
 
 
 ### Public methods available in the class:
@@ -139,7 +141,7 @@ class PostDatatable extends DatatableInertia
 
     public $perPageKey = 'post_per_page';
 
-    public $itemPerPage = 25;
+    public $itemsPerPage = 25;
 
     public $serverSide = true;
 

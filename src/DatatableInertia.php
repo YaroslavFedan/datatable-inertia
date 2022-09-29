@@ -9,34 +9,34 @@ class DatatableInertia extends DatatableInertiaAbstract
 {
     /**
      * The name of the object containing all returned data from datatable
+     * 
      * @var string
      */
-    public string $datatableName;
+    public $datatableName;
 
     /**
      * The key in the request responsible for changing the number
      * of displayed elements on the page (only when rendering on the client side)
+     * 
+     * @var string
      */
-    public string $perPageKey;
+    public $perPageKey;
 
     /**
      * Parameter responsible for the number of displayed elements on the page by default
+     * 
+     * @var int
      */
-    public int $itemPerPage;
+    public $itemsPerPage;
 
     /**
      * Parameter responsible for the server or client side rendering
+     * 
+     * @var boolean
      */
-    public bool $serverSide;
+    public $serverSide;
 
 
-    public function __construct()
-    {
-        $this->datatableName = config('datatables.datatableKey', 'datatable');
-        $this->itemPerPage = config('datatables.itemPerPage', 15);
-        $this->perPageKey = config('datatables.perPageKey', 'per_page');
-        $this->serverSide = config('datatables.serverSide', false);
-    }
 
     /**
      * Eloquent query builder

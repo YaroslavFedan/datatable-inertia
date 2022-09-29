@@ -22,7 +22,7 @@ return [
     | You can change this on your datatable, set public property perPage
     |
     */
-    'itemPerPage' => 15,
+    'itemsPerPage' => 25,
 
     /*
     |--------------------------------------------------------------------------
