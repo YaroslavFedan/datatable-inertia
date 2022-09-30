@@ -8,7 +8,7 @@ This package provides a DataTables-like experience for Inertia.js with support f
 
 | Laravel                    | datatable-inertia |
 | :------------------------- | :---------------- |
-| 6.0-9.x (PHP 7.4 min)      | 0.0.x             |
+| 6.0-9.x                    | 0.0.x             |
 
 ## Installation
 
