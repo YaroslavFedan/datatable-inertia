@@ -109,6 +109,34 @@ class PostDatatableTest extends TestCase
     }
 
     /** @test */
+    public function when_per_page_param_is_not_filled_must_be_returned_default_in_config_value()
+    {
+        $perPage = '';
+        $datatable = new PostDatatableExample();
+        $datatable->serverSide = true;
+        $response = $this->makeInertiaResponse($datatable, ['per_page' => $perPage]);
+        $data = $this->inertiaResponseJsonToArray($response);
+
+        $this->assertEquals(config('datatables.itemsPerPage'), (int)$data['props']['datatable']['per_page']);
+    }
+
+
+    /** @test */
+    public function when_per_page_param_is_not_number_or_is_zero_must_be_returned_default_in_config_value()
+    {
+        $perPages = ['a', 'test', .5, 10.2, '14a', 0];
+
+        foreach ($perPages as $perPage) {
+            $datatable = new PostDatatableExample();
+            $datatable->serverSide = true;
+            $response = $this->makeInertiaResponse($datatable, ['per_page' => $perPage]);
+            $data = $this->inertiaResponseJsonToArray($response);
+    
+            $this->assertEquals(config('datatables.itemsPerPage'), (int)$data['props']['datatable']['per_page']);
+        }
+    }
+
+    /** @test */
     public function is_total_items_equals_all_post_count()
     {
         $recordCount = 100;
