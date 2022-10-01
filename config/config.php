@@ -8,10 +8,10 @@ return [
     |--------------------------------------------------------------------------
     |
     | Named datatable array on response,
-    | You can change this on your datatable, set public property datatableKey
+    | You can change this on your datatable, set public property datatable_name
     |
     */
-    'datatableKey' => 'datatable',
+    'datatable_name' => 'datatable',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,19 +22,19 @@ return [
     | You can change this on your datatable, set public property perPage
     |
     */
-    'itemsPerPage' => 25,
+    'items_per_page' => 25,
 
     /*
     |--------------------------------------------------------------------------
     | The name of the key of the elements on the per page
     |--------------------------------------------------------------------------
     |
-    | If you set the property of isServerSide as True,
+    | If you set the property of is_server_side as True,
     | this package should know which key in the request
     | will be set the number of elements on the page.
     |
     */
-    'perPageKey' => 'per_page',
+    'per_page_key' => 'per_page',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     | You can change this on your datatable, set public property serverSide
     |
     */
-    'serverSide' => false,
+    'is_server_side' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,5 +55,5 @@ return [
     | you can dynamically change the path to the location folder
     |
     */
-    'basePath' => 'App/Datatables',
+    'datatables_folder_path' => 'App/Datatables',
 ];

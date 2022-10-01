@@ -22,10 +22,10 @@ abstract class DatatableInertiaAbstract
 
     public function __construct()
     {
-        $this->datatableName = config('datatables.datatableName', 'datatable');
-        $this->perPageKey = config('datatables.perPageKey', 'per_page');
-        $this->itemsPerPage = config('datatables.itemsPerPage', 15);
-        $this->serverSide = config('datatables.serverSide', false);
+        $this->datatableName = config('datatables.datatable_name', 'datatable');
+        $this->perPageKey = config('datatables.per_page_key', 'per_page');
+        $this->itemsPerPage = config('datatables.items_per_page', 15);
+        $this->serverSide = config('datatables.is_server_side', false);
     }
 
     /**

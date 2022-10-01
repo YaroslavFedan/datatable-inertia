@@ -47,7 +47,7 @@ class DatatableInertiaCommand extends Command
 
     public function handle()
     {
-        $this->pathToDirectory = config('datatables.basePath', 'App/Datatables');
+        $this->pathToDirectory = config('datatables.datatables_folder_path', 'App/Datatables');
         $this->datatableName = $this->argument('DatatableName') ?? 'ExampleDatatable';
         $this->stub = __DIR__ . '/../../../stubs/DatatableInertia.stub';
 

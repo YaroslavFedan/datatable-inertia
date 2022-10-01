@@ -117,7 +117,7 @@ class PostDatatableTest extends TestCase
         $response = $this->makeInertiaResponse($datatable, ['per_page' => $perPage]);
         $data = $this->inertiaResponseJsonToArray($response);
 
-        $this->assertEquals(config('datatables.itemsPerPage'), (int)$data['props']['datatable']['per_page']);
+        $this->assertEquals(config('datatables.items_per_page'), (int)$data['props']['datatable']['per_page']);
     }
 
 
@@ -131,8 +131,8 @@ class PostDatatableTest extends TestCase
             $datatable->serverSide = true;
             $response = $this->makeInertiaResponse($datatable, ['per_page' => $perPage]);
             $data = $this->inertiaResponseJsonToArray($response);
-    
-            $this->assertEquals(config('datatables.itemsPerPage'), (int)$data['props']['datatable']['per_page']);
+
+            $this->assertEquals(config('datatables.items_per_page'), (int)$data['props']['datatable']['per_page']);
         }
     }
 

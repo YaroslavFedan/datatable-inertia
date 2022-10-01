@@ -8,7 +8,6 @@ use Dongrim\DatatableInertia\DatatableInertiaServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {
-    public $datatableKey;
 
     protected $params = [
         'data',
