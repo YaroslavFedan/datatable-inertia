@@ -1,4 +1,4 @@
-name: datatable-inertia
+name: tests
 
 on:
   push:
