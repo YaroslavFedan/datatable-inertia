@@ -1,6 +1,7 @@
 # Datatable-Inertia
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![datatable-inertia](https://github.com/YaroslavFedan/datatable-inertia/actions/workflows/laravel.yml/badge.svg)](https://github.com/YaroslavFedan/datatable-inertia/actions/workflows/laravel.yml)
 
 This package provides a DataTables-like experience for Inertia.js with support for searching, filtering, sorting and pagination.
 
